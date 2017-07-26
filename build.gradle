@@ -1,0 +1,61 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "jacoco"
+
+jar {
+	baseName = 'ValJni'
+	version = '0.0.1-SNAPSHOT'
+    manifest {
+        attributes(
+            // 'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+            'Main-Class': 'com.valjni.sample.TestJniUtility'
+        )
+    }
+}
+
+sourceSets {
+    main.java.srcDir "src/java"
+    main.resources.srcDir "src/resources"
+}
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+jacocoTestReport {
+	reports {
+		xml.enabled false
+		csv.enabled false
+		html.destination "${buildDir}/jacocoHtml"
+	}
+}
+
+task coverage {
+	finalizedBy test
+	finalizedBy jacocoTestReport
+}
+
+dependencies {
+	compile(group: 'com.google.guava', name: 'guava', version: '19.0')
+	compile(group: 'commons-logging', name: 'commons-logging', version: '1.1.1')
+	compile(group: 'commons-io', name: 'commons-io', version: '2.4')
+    compile(group: 'com.timgroup', name: 'java-statsd-client', version: '3.0.1')
+
+	compileOnly(group: 'org.projectlombok', name: 'lombok', version: '1.16.10')
+
+    testCompile(group: 'org.mockito', name: 'mockito-core', version: '2.2.5')
+	testCompile(group: 'org.assertj', name: 'assertj-core', version: '3.5.2')
+}
