@@ -1,0 +1,1 @@
+["com.valjni.caller.JniCallMessage",{"sharedObjectPath":"/home/houcheng/workspace/valjni/src/main/build/libexample.so","methodName":"Java_com_valjni_example_JniExample_addFloatJni","returnValue":{"signature":"F","value":"0"},"argumentValues":[{"signature":"F","value":"8.7"},{"signature":"F","value":"9.2"}]}]

@@ -1,0 +1,1 @@
+fswatch -r -x --event Updated jni jni_server test | xargs -n1 -I{} make -j4 -C build run_test

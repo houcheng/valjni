@@ -1,6 +1,18 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+src/build/
+error.output
+eclipse
+cmake-build-debug
+
+CMakeCache.txt
+CMakeFiles
+*.cmake
+*.so
+
+# Binaries
+src/main/jni/example_main/example_main
 
 ### STS ###
 .classpath

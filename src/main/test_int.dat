@@ -1,0 +1,1 @@
+["com.valjni.caller.JniCallMessage",{"sharedObjectPath":"/home/houcheng/workspace/valjni/src/main/build/libexample.so","methodName":"Java_com_valjni_example_JniExample_addJni","returnValue":{"signature":"I","value":"0"},"argumentValues":[{"signature":"I","value":"3"},{"signature":"I","value":"4"}]}]
